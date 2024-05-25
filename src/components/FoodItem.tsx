@@ -1,10 +1,9 @@
 "use client";
 
 import type { FoodItem } from "@/store/apiSlice";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import ShareIcon from "@mui/icons-material/Share";
 import Avatar from "@mui/material/Avatar";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -37,6 +36,7 @@ type Props = { foodItem: FoodItem };
 
 export default function FoodItem({ foodItem }: Props) {
   const [expanded, setExpanded] = React.useState(false);
+  const { description, id, img_url, method, name, post_date, price } = foodItem;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -47,36 +47,35 @@ export default function FoodItem({ foodItem }: Props) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {name[0].toLocaleUpperCase()}
           </Avatar>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={name}
+        subheader={post_date}
       />
       <CardMedia
         component="img"
         height="194"
-        image="https://mui.com/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        image={img_url}
+        // alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {description}
+        </Typography>
+        <Typography variant="subtitle2" className="pt-4">
+          Price:{" "}
+          <Typography style={{ display: "inline" }} color="red">
+            ${price}
+          </Typography>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <EditIcon />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <DeleteIcon />
         </IconButton>
         <ExpandMore
           expand={expanded}
