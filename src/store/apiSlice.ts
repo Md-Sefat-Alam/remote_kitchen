@@ -21,3 +21,5 @@ export const apiSlice = createApi({
     }),
   }),
 });
+
+export const { useGetFoodItemsQuery } = apiSlice;
