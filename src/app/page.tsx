@@ -1,7 +1,9 @@
+import FoodItem from "@/components/FoodItem";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      remote kitchen!
-    </main>
+    <div className="container mx-auto p-4">
+      <FoodItem />
+    </div>
   );
 }
