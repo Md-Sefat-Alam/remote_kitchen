@@ -37,7 +37,7 @@ export default function EditItemModal({ foodItem }: Props) {
 
   const handleClose = () => {
     setOpen(false);
-    control._reset();
+    // control._reset();
   };
 
   useEffect(() => {
