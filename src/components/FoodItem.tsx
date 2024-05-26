@@ -1,8 +1,8 @@
 "use client";
 
+import { useToast } from "@/contexts/ToastContext";
 import { useDeleteFoodItemMutation, type FoodItem } from "@/store/apiSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Avatar from "@mui/material/Avatar";
 import Card from "@mui/material/Card";
@@ -17,7 +17,6 @@ import { red } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import * as React from "react";
 import EditItemModal from "./modals/EditItemModal";
-import { useToast } from "@/contexts/ToastContext";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;

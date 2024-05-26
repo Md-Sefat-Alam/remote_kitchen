@@ -17,12 +17,14 @@ import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import EditIcon from "@mui/icons-material/Edit";
 import AddOrEditModalItems from "./AddOrEditModalItems";
+import { useToast } from "@/contexts/ToastContext";
 
 type Props = { foodItem: FoodItem };
 
 export default function EditItemModal({ foodItem }: Props) {
   const [editFoodItem] = useEditFoodItemMutation();
   const [open, setOpen] = useState(false);
+  const toast = useToast();
   const { control, handleSubmit, setValue } = useForm<PostFoodItem>({
     defaultValues: {
       name: "",
@@ -49,9 +51,10 @@ export default function EditItemModal({ foodItem }: Props) {
   }, [foodItem]);
 
   const handleUpdate: SubmitHandler<PostFoodItem> = (data) => {
-    console.log({ ...data, id: foodItem.id });
-
-    editFoodItem({ ...data, id: foodItem.id }).finally(handleClose);
+    editFoodItem({ ...data, id: foodItem.id }).finally(() => {
+      handleClose();
+      toast(`Food Item ${foodItem.id} has been updated`, "success");
+    });
   };
 
   return (

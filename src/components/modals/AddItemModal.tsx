@@ -1,24 +1,23 @@
 "use client";
-import {
-  PostFoodItem,
-  useAddFoodItemMutation
-} from "@/store/apiSlice";
+import { PostFoodItem, useAddFoodItemMutation } from "@/store/apiSlice";
 import {
   Button,
   Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle
+  DialogTitle,
 } from "@mui/material";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import AddOrEditModalItems from "./AddOrEditModalItems";
+import { useToast } from "@/contexts/ToastContext";
 
 type Props = {};
 
 export default function AddItemModal({}: Props) {
   const [addFoodItem] = useAddFoodItemMutation();
   const [open, setOpen] = useState(false);
+  const toast = useToast();
   const { control, handleSubmit } = useForm<PostFoodItem>({
     defaultValues: {
       name: "",
@@ -35,8 +34,10 @@ export default function AddItemModal({}: Props) {
   };
 
   const handleSave: SubmitHandler<PostFoodItem> = (data) => {
-    console.log({ data });
-    addFoodItem(data).finally(handleClose);
+    addFoodItem(data).finally(() => {
+      handleClose();
+      toast(`Added new food item ${data.name}`, "success");
+    });
   };
   return (
     <>
