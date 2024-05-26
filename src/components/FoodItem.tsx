@@ -95,7 +95,9 @@ export default function FoodItem({ foodItem }: Props) {
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>{method}</CardContent>
+        <CardContent>
+          <div dangerouslySetInnerHTML={{ __html: method }} />
+        </CardContent>
       </Collapse>
     </Card>
   );

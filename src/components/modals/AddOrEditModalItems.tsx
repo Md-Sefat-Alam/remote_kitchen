@@ -11,33 +11,40 @@ export default function AddOrEditModalItems({ control }: Props) {
       <Controller
         name="name"
         control={control}
-        render={({ field }) => (
+        rules={{ required: "Name is required" }}
+        render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
             label={"Name"}
             margin="dense"
             fullWidth
             variant="outlined"
+            error={!!error}
+            helperText={error ? error.message : null}
           />
         )}
       />
       <Controller
         name="description"
         control={control}
-        render={({ field }) => (
+        rules={{ required: "Description is required" }}
+        render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
             label={"Description"}
             margin="dense"
             fullWidth
             variant="outlined"
+            error={!!error}
+            helperText={error ? error.message : null}
           />
         )}
       />
       <Controller
         name="img_url"
         control={control}
-        render={({ field }) => (
+        rules={{ required: "Image URL is required" }}
+        render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
             label={"Img URL"}
@@ -45,13 +52,16 @@ export default function AddOrEditModalItems({ control }: Props) {
             variant="outlined"
             margin="dense"
             fullWidth
+            error={!!error}
+            helperText={error ? error.message : null}
           />
         )}
       />
       <Controller
         name="price"
         control={control}
-        render={({ field }) => (
+        rules={{ required: "Price is required" }}
+        render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
             label={"Price"}
@@ -59,13 +69,16 @@ export default function AddOrEditModalItems({ control }: Props) {
             margin="dense"
             fullWidth
             type="number"
+            error={!!error}
+            helperText={error ? error.message : null}
           />
         )}
       />
       <Controller
         name="method"
         control={control}
-        render={({ field }) => (
+        rules={{ required: "Method is required" }}
+        render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
             label={"Method"}
@@ -73,6 +86,8 @@ export default function AddOrEditModalItems({ control }: Props) {
             margin="dense"
             fullWidth
             type="text"
+            error={!!error}
+            helperText={error ? error.message : null}
           />
         )}
       />

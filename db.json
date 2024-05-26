@@ -10,31 +10,49 @@
       "method": "Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes. </br> Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; </br> bring to a boil. Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook without stirring, until most of the liquid is absorbed, 15 to 18 minutes.</br> Reduce heat to medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook again without stirring, until mussels have opened and rice is just tender, 5 to 7 minutes more. (Discard any mussels that don't open.) </br> Set aside off of the heat to let rest for 10 minutes, and then serve."
     },
     {
-      "name": "Shrimp and Chorizo Paella 2",
-      "description": "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+      "id": "3",
+      "name": "Margherita Pizza",
+      "description": "Margherita Pizza is a classic Italian pizza topped with tomato sauce, fresh mozzarella cheese, and basil leaves.",
       "img_url": "https://mui.com/static/images/cards/paella.jpg",
-      "price": "2",
-      "method": "Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes. </br> Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; </br> bring to a boil. Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook without stirring, until most of the liquid is absorbed, 15 to 18 minutes.</br> Reduce heat to medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook again without stirring, until mussels have opened and rice is just tender, 5 to 7 minutes more. (Discard any mussels that don't open.) </br> Set aside off of the heat to let rest for 10 minutes, and then serve.",
-      "id": "2",
-      "updated_date": "5/26/2024"
+      "price": "18",
+      "post_date": "October 12, 2016",
+      "method": "Preheat your oven to 475°F. </br> Stretch your dough out into a 12-inch circle. </br> Spread the tomato sauce evenly over the dough, leaving a small border around the edges. </br> Tear the fresh mozzarella into small pieces and distribute evenly over the sauce. </br> Bake the pizza in the preheated oven for 10-12 minutes, or until the crust is golden and the cheese is bubbly and slightly browned. </br> Remove from the oven, sprinkle with fresh basil leaves, slice, and serve."
     },
     {
-      "name": "walton",
-      "description": "abcd",
+      "id": "4",
+      "name": "Chicken Alfredo Pasta",
+      "description": "Chicken Alfredo Pasta is a creamy and indulgent dish made with tender chicken breast, fettuccine pasta, and a rich Alfredo sauce.",
       "img_url": "https://mui.com/static/images/cards/paella.jpg",
-      "price": "34",
-      "method": "sdfa asfa asdf adsf",
-      "id": "1716698271739",
-      "updated_date": "5/26/2024"
+      "price": "22",
+      "post_date": "June 5, 2018",
+      "method": "Cook the fettuccine pasta according to package instructions until al dente. </br> In a large skillet, heat olive oil over medium heat. Add diced chicken breast and cook until browned and cooked through. </br> Add minced garlic to the skillet and cook for an additional minute. </br> Pour in heavy cream and Parmesan cheese, stirring until the cheese has melted and the sauce has thickened. </br> Add the cooked pasta to the skillet and toss until well coated in the sauce. </br> Serve immediately, garnished with chopped parsley and additional Parmesan cheese, if desired."
     },
     {
-      "id": "1,716,712,007,584",
-      "name": "Pizza",
-      "description": "Pizza is a delicious food",
+      "id": "5",
+      "name": "Grilled Salmon",
+      "description": "Grilled Salmon is a healthy and flavorful dish made with fresh salmon fillets marinated in a simple mixture of olive oil, lemon juice, garlic, and herbs.",
       "img_url": "https://mui.com/static/images/cards/paella.jpg",
-      "price": "50",
-      "method": "sdfa asfa asdf adsf",
-      "post_date": "5/26/2024"
+      "price": "25",
+      "post_date": "March 20, 2017",
+      "method": "Preheat your grill to medium-high heat. </br> In a small bowl, whisk together olive oil, lemon juice, minced garlic, chopped parsley, salt, and black pepper. </br> Place the salmon fillets on a large piece of aluminum foil and brush the marinade over the top. </br> Grill the salmon fillets for 4-5 minutes per side, or until cooked through and flaky. </br> Remove from the grill and serve immediately, garnished with lemon wedges and fresh herbs."
+    },
+    {
+      "id": "6",
+      "name": "Caesar Salad",
+      "description": "Caesar Salad is a classic salad made with crisp romaine lettuce, crunchy croutons, tangy Caesar dressing, and shaved Parmesan cheese.",
+      "img_url": "https://mui.com/static/images/cards/paella.jpg",
+      "price": "14",
+      "post_date": "December 8, 2019",
+      "method": "In a large salad bowl, combine torn romaine lettuce leaves and homemade or store-bought Caesar dressing. </br> Toss until the lettuce is evenly coated in the dressing. </br> Add homemade or store-bought croutons to the salad and toss again. </br> Sprinkle shaved Parmesan cheese over the top of the salad. </br> Serve immediately as a side dish or add grilled chicken or shrimp for a complete meal."
+    },
+    {
+      "id": "7",
+      "name": "Beef Burger",
+      "description": "Beef Burger is a classic American dish made with ground beef patties seasoned with salt, pepper, and spices, grilled to perfection, and served on a toasted bun with your favorite toppings.",
+      "img_url": "https://mui.com/static/images/cards/paella.jpg",
+      "price": "16",
+      "post_date": "July 3, 2018",
+      "method": "Preheat your grill or grill pan to medium-high heat. </br> Season ground beef with salt, pepper, and any desired spices. </br> Form the seasoned ground beef into patties, about 1/4 to 1/2 inch thick. </br> Grill the burger patties for 4-5 minutes per side, or until cooked to your desired level of doneness. </br> Toast the burger buns on the grill for a minute or two, until lightly browned. </br> Assemble the burgers by placing the cooked patties on the bottom bun, adding your favorite toppings, and finishing with the top bun. </br> Serve immediately."
     }
   ]
 }
