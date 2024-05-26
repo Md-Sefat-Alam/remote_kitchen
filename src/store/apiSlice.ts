@@ -10,7 +10,8 @@ export interface FoodItem {
   method: string;
 }
 
-type PostFoodItem = Omit<FoodItem, "id" | "post_date">;
+export type PostFoodItem = Omit<FoodItem, "id" | "post_date">;
+export type EditFoodItem = Omit<FoodItem, "post_date">;
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -27,14 +28,31 @@ export const apiSlice = createApi({
         method: "POST",
         body: {
           ...newItem,
-          id: Date.now(),
+          id: Date.now().toLocaleString(),
           post_date: new Date().toLocaleDateString(),
         },
       }),
-
+      invalidatesTags: ["Food"],
+    }),
+    editFoodItem: builder.mutation<void, EditFoodItem>({
+      query: (editItem) => ({
+        url: `foodItems/${editItem?.id}`,
+        method: "PUT",
+        body: {
+          ...editItem,
+          updated_date: new Date().toLocaleDateString(),
+        },
+      }),
+      invalidatesTags: ["Food"],
+    }),
+    deleteFoodItem: builder.mutation<void, { id: number }>({
+      query: ({ id }) => ({
+        url: `foodItems/${id}`,
+        method: "DELETE",
+      }),
       invalidatesTags: ["Food"],
     }),
   }),
 });
 
-export const { useGetFoodItemsQuery, useAddFoodItemMutation } = apiSlice;
+export const { useGetFoodItemsQuery, useAddFoodItemMutation, useEditFoodItemMutation, useDeleteFoodItemMutation } = apiSlice;

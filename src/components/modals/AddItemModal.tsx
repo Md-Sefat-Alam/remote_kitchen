@@ -1,24 +1,25 @@
 "use client";
-import { FoodItem, useAddFoodItemMutation } from "@/store/apiSlice";
+import {
+  PostFoodItem,
+  useAddFoodItemMutation
+} from "@/store/apiSlice";
 import {
   Button,
-  TextField,
   Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle,
-  Box,
+  DialogTitle
 } from "@mui/material";
-import React, { useState } from "react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import AddOrEditModalItems from "./AddOrEditModalItems";
 
 type Props = {};
-type FoodItemType = Omit<FoodItem, "id" | "post_date">;
 
 export default function AddItemModal({}: Props) {
   const [addFoodItem] = useAddFoodItemMutation();
   const [open, setOpen] = useState(false);
-  const { control, handleSubmit } = useForm<FoodItemType>({
+  const { control, handleSubmit } = useForm<PostFoodItem>({
     defaultValues: {
       name: "",
       description: "",
@@ -30,9 +31,10 @@ export default function AddItemModal({}: Props) {
 
   const handleClose = () => {
     setOpen(false);
+    control._reset();
   };
 
-  const handleSave: SubmitHandler<FoodItemType> = (data) => {
+  const handleSave: SubmitHandler<PostFoodItem> = (data) => {
     console.log({ data });
     addFoodItem(data).finally(handleClose);
   };
@@ -44,78 +46,7 @@ export default function AddItemModal({}: Props) {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add Food Item</DialogTitle>
         <DialogContent>
-          <Box component={"form"} onSubmit={handleSubmit(handleSave)}>
-            <Controller
-              name="name"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label={"Name"}
-                  margin="dense"
-                  fullWidth
-                  variant="outlined"
-                />
-              )}
-            />
-            <Controller
-              name="description"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label={"Description"}
-                  margin="dense"
-                  fullWidth
-                  variant="outlined"
-                />
-              )}
-            />
-            <Controller
-              name="img_url"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label={"Img URL"}
-                  defaultValue={
-                    "https://mui.com/static/images/cards/paella.jpg"
-                  }
-                  variant="outlined"
-                  margin="dense"
-                  fullWidth
-                />
-              )}
-            />
-            <Controller
-              name="price"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label={"Price"}
-                  variant="outlined"
-                  margin="dense"
-                  fullWidth
-                  type="number"
-                />
-              )}
-            />
-            <Controller
-              name="method"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label={"Method"}
-                  variant="outlined"
-                  margin="dense"
-                  fullWidth
-                  type="text"
-                />
-              )}
-            />
-          </Box>
+          <AddOrEditModalItems control={control} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="secondary">
