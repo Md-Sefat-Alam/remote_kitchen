@@ -1,6 +1,6 @@
 "use client";
 
-import type { FoodItem } from "@/store/apiSlice";
+import { type FoodItem } from "@/store/apiSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";

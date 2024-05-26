@@ -10,6 +10,8 @@ export interface FoodItem {
   method: string;
 }
 
+type PostFoodItem = Omit<FoodItem, "id" | "post_date">;
+
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
@@ -19,7 +21,20 @@ export const apiSlice = createApi({
       query: () => "foodItems",
       providesTags: ["Food"],
     }),
+    addFoodItem: builder.mutation<void, PostFoodItem>({
+      query: (newItem) => ({
+        url: "foodItems",
+        method: "POST",
+        body: {
+          ...newItem,
+          id: Date.now(),
+          post_date: new Date().toLocaleDateString(),
+        },
+      }),
+
+      invalidatesTags: ["Food"],
+    }),
   }),
 });
 
-export const { useGetFoodItemsQuery } = apiSlice;
+export const { useGetFoodItemsQuery, useAddFoodItemMutation } = apiSlice;

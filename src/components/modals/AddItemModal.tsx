@@ -1,5 +1,5 @@
 "use client";
-import { FoodItem } from "@/store/apiSlice";
+import { FoodItem, useAddFoodItemMutation } from "@/store/apiSlice";
 import {
   Button,
   TextField,
@@ -13,9 +13,10 @@ import React, { useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 type Props = {};
-type FoodItemType = Omit<FoodItem, "id">;
+type FoodItemType = Omit<FoodItem, "id" | "post_date">;
 
 export default function AddItemModal({}: Props) {
+  const [addFoodItem] = useAddFoodItemMutation();
   const [open, setOpen] = useState(false);
   const { control, handleSubmit } = useForm<FoodItemType>({
     defaultValues: {
@@ -23,7 +24,6 @@ export default function AddItemModal({}: Props) {
       description: "",
       img_url: "",
       price: 0,
-      post_date: "",
       method: "",
     },
   });
@@ -34,6 +34,7 @@ export default function AddItemModal({}: Props) {
 
   const handleSave: SubmitHandler<FoodItemType> = (data) => {
     console.log({ data });
+    addFoodItem(data).finally(handleClose);
   };
   return (
     <>
