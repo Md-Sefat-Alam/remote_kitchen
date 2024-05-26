@@ -8,7 +8,6 @@ type Props = {};
 
 export default function FoodItems({}: Props) {
   const { data: foodItems, refetch } = useGetFoodItemsQuery();
-  console.log(foodItems);
 
   return (
     <div>
